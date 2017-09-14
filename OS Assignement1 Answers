@@ -1,0 +1,4 @@
+## Experiment 1
+2. (e) `sed 's/.//1' books.txt`
+   (f) `sed -E 's/.(..)$/\1/ books.txt' 
+   (g) `sed -e "s/\([^ ]*\) *\([^ ]*\)/\2 \1 /g" file`
