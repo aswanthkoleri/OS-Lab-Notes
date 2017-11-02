@@ -8,7 +8,7 @@
 int main(){
 	int fd;
 	char *fpath = "/tmp/mypipe";
-	printf("Creating named pipe: /tmp/mypipe ");
+	printf("Creating named pipe: /tmp/mypipe \n");
 	mkfifo(fpath,0666);
 	int flag=1;
 	char ar2[80];
@@ -16,7 +16,7 @@ int main(){
 	{
 		fd=open(fpath,O_RDONLY);
 		read(fd,ar2,sizeof(ar2));
-		printf("Waiting for input got it : %s\n",ar2);
+		printf("Waiting for input....got it : %s\n",ar2);
 		printf("%s exit",ar2);
 		if(strcmp(ar2,"exit")==0){
 		printf("Exiting\n");

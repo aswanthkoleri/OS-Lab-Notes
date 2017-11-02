@@ -8,18 +8,17 @@
 int main(){
 	int fd;
 	char *fpath = "/tmp/mypipe";
-	printf("Opening named pipe: /tmp/mypipe ");
+	printf("Opening named pipe: /tmp/mypipe \n");
 	mkfifo(fpath,0666);
 	char ar1[80];
 	int flag = 1;
-	while(flag){
+	while(flag==1){
 		/*Writing*/
 		fd = open(fpath,O_WRONLY);
 		printf("Enter Input : ");
-		fgets(ar1,80,stdin);
+		gets(ar1);
 		write(fd,ar1,strlen(ar1)+1);
-		printf("Writing buffer to pipe.....done");
-		printf("%s exit",ar1);
+		printf("Writing buffer to pipe.....done\n");
 		if(strcmp(ar1,"exit")==0){
 		printf("Exiting\n");
 		close(fd);
